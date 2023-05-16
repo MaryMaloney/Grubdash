@@ -127,7 +127,7 @@ function read(request, response) {
 function update(request, response) {
     const { data: { deliverTo, mobileNumber, dishes, status } = {} } = request.body;
     response.locals.order = {
-        id: response.locals.order.id,
+        ...response.locals.order,
         deliverTo: deliverTo,
         mobileNumber: mobileNumber,
         dishes: dishes,
